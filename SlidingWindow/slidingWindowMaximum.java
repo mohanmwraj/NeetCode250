@@ -1,5 +1,6 @@
 package SlidingWindow;
 
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
@@ -146,7 +147,7 @@ public class slidingWindowMaximum {
         * Approach: Deque
         *
      */
-    public int[] maxSlidingWindow(int[] nums, int k) {
+    public int[] maxSlidingWindow_5(int[] nums, int k) {
         int n = nums.length;
         int[] output = new int[n - k + 1];
         Deque<Integer> q = new LinkedList<>();
