@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
+/*
+    Input: tokens = ["1","2","+","3","*","4","-"]
+    Output: 5
+    Explanation: ((1 + 2) * 3) - 4 = 5
+ */
 public class evaluateReversePolishNotation {
     /*
         * Approach: Brute Force

@@ -5,7 +5,18 @@ import java.util.Stack;
 
 public class carFleet {
     /*
+        * Combine as A Pair of Position, Speed/
+        * Generally these cars are systems of linear equations.
+        *
+     */
+    /*
         * Approach: Stack
+        *
+        * create a pair of Position and speed
+        * Sort based on car's starting position
+        *
+        * calculate reaching time by target - car's position % speed.
+        * if the previous cars are below the relative speed, then that means they are in the same fleet.
         *
      */
     public int carFleet_1(int target, int[] position, int[] speed) {

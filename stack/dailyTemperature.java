@@ -1,7 +1,12 @@
 package stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
-
+/*
+    Input: temperatures = [30,38,30,36,35,40,28]
+    Output: [1,4,1,2,1,0,0]
+ */
 public class dailyTemperature {
     /*
         * Approach: Brute Force
@@ -79,5 +84,31 @@ public class dailyTemperature {
     /*
         Time Complexity: O(n)
         Space Complexity: O(1)
+     */
+
+    /*
+        * Approach: Monotonic Increasing Stack
+        *
+     */
+    public int[] dailyTemperatures(int[] temperatures) {
+        int n = temperatures.length;
+        int[] answer = new int[n];
+        Deque<Integer> stack = new ArrayDeque();
+
+        for(int currDay = 0; currDay < n; currDay++){
+            int currentTemp = temperatures[currDay];
+
+            while(!stack.isEmpty() && temperatures[stack.peek()] < currentTemp){
+                int prevDay = stack.pop();
+                answer[prevDay] = currDay - prevDay;
+            }
+            stack.push(currDay);
+        }
+
+        return answer;
+    }
+    /*
+        Time Complexity: O(n)
+        Space Complexity: O(n)
      */
 }
